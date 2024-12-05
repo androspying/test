@@ -1,0 +1,31 @@
+<form [formGroup]="form" class="token-list" cdkDropList (cdkDropListDropped)="drop($event)">
+  <app-token
+    *ngFor="let token of tokensDisplay$ | async"
+    [token]="token"
+    [editing]="(editing$ | async) || false"
+    [form]="form"
+    (copyCode)="copy($event)"
+    (freeze)="freeze()"
+    (unfreeze)="unfreeze()"
+    (toggle)="toggle($event)"
+  ></app-token>
+</form>
+<div class="hidden-input"><input type="text" #copyInput /></div>
+<div class="buttons">
+  <ng-container *ngIf="editing$ | async; else nonEditing">
+    <button mat-fab color="primary" class="button" (click)="cancelEdit()">
+      <mat-icon>clear</mat-icon>
+    </button>
+    <button mat-fab color="primary" class="button" (click)="save()">
+      <mat-icon>check</mat-icon>
+    </button>
+  </ng-container>
+  <ng-template #nonEditing>
+    <button mat-fab color="primary" class="button" (click)="edit()" *ngIf="tokensExists$ | async">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-fab color="primary" class="button" (click)="add()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </ng-template>
+</div>

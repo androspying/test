@@ -1,0 +1,21 @@
+@import 'app-theme.scss';
+
+.code {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 2rem;
+
+  .char {
+    margin-left: 0.5vw;
+    width: 1.3rem;
+
+    &.wide {
+      margin-right: 2vw;
+    }
+
+    &.novis {
+      opacity: 0.25;
+    }
+  }
+}

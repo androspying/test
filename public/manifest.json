@@ -1,0 +1,21 @@
+{
+  "short_name": "TuFA",
+  "name": "totp-app",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "permissions": [
+    "clipboardWrite"
+  ],
+  "start_url": "/?utm_source=launcher",
+  "description": "Timed One-Time-Password (TOTP) - Two Factor (TuFA) application",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1a8cff",
+  "categories": ["personalization", "productivity", "utilities"],
+  "theme_color": "#1a8cff"
+}
