@@ -1,21 +1,32 @@
 {
-  "short_name": "TuFA",
-  "name": "totp-app",
+  "short_name": "2FAuth",
+  "name": "2FAuth",
   "icons": [
     {
-      "src": "/favicon.png",
-      "sizes": "256x256",
-      "type": "image/png"
+      "src": "/favicon_lg.png",
+      "type": "image/png",
+      "sizes": "180x180"
     }
   ],
-  "permissions": [
-    "clipboardWrite"
-  ],
-  "start_url": "/?utm_source=launcher",
-  "description": "Timed One-Time-Password (TOTP) - Two Factor (TuFA) application",
+  "start_url": "/",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#1a8cff",
-  "categories": ["personalization", "productivity", "utilities"],
-  "theme_color": "#1a8cff"
+  "scope": "/",
+  "theme_color": "#242424",
+  "shortcuts": [
+    {
+      "name": "New 2FA",
+      "url": "/start",
+      "description": "Add a new 2FA account by flashing a QR code or filling out a form"
+    },
+    {
+      "name": "Import 2FAs",
+      "url": "/account/import",
+      "description": "Import 2FA accounts previously exported from another 2FA app"
+    },
+    {
+      "name": "Settings",
+      "url": "/settings/options",
+      "description": "Manage your 2FAuth user settings"
+    }
+  ]
 }

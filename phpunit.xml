@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+    backupGlobals="false"
+    backupStaticProperties="false"
+    bootstrap="vendor/autoload.php"
+    colors="true"
+    displayDetailsOnTestsThatTriggerErrors="true"
+    displayDetailsOnTestsThatTriggerNotices="true"
+    displayDetailsOnTestsThatTriggerWarnings="true"
+    displayDetailsOnPhpunitDeprecations="true"
+    processIsolation="false"
+    stopOnFailure="false"
+    stopOnError="false"
+    beStrictAboutTestsThatDoNotTestAnything="false">
+    <source>
+        <include>
+            <directory suffix=".php">app</directory>
+        </include>
+        <exclude>
+            <directory suffix=".php">app/Protobuf</directory>
+        </exclude>
+    </source>
+    <coverage>
+    </coverage>
+    <testsuites>
+        <testsuite name="Unit">
+            <directory suffix="Test.php">tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Feature">
+            <directory suffix="Test.php">tests/Feature</directory>
+        </testsuite>
+        <testsuite name="Api.v1">
+            <directory suffix="Test.php">tests/Api/v1</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <ini name="memory_limit" value="2048M"/>
+        <env name="APP_ENV" value="testing"/>
+        <!-- following values override .env.testing vars -->
+    </php>
+</phpunit>
